@@ -1,0 +1,1 @@
+He pogut realitzar la funcionalitat sencera de poder mostrar les preguntes freqquents sobre la aplicació i implementar el backen Dummy, es pot comprovar entrant al menu principal després de crear partida i donant-li al icono de la foto del placeholder i surt una activity on surten les preguntes (FAQs)
