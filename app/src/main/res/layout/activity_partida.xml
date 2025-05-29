@@ -98,7 +98,7 @@
         android:layout_height="100dp"
         android:background="@null"
         android:scaleType="fitCenter"
-        android:src="@drawable/placeholder"
+        android:src="@drawable/faq"
         app:layout_constraintTop_toBottomOf="@id/btnInventario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
