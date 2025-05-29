@@ -3,6 +3,7 @@ package dsa.upc.edu.listapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +28,7 @@ public class InventarioActivity extends AppCompatActivity {
     private InventarioAdapter adapter;
     private StoreAPI api;
     private String idPartida;
+    private TextView tvInventarioCount; // 👈 NUEVO
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class InventarioActivity extends AppCompatActivity {
             finish();
             return;
         }
+
+        tvInventarioCount = findViewById(R.id.tvInventarioCount); // 👈 NUEVO
 
         Button backButton = findViewById(R.id.btn_back);
         backButton.setOnClickListener(view -> finish());
@@ -57,7 +61,6 @@ public class InventarioActivity extends AppCompatActivity {
         cargarInventario();
     }
 
-
     private void cargarInventario() {
         api.getPartidaDetalle(idPartida)
                 .enqueue(new Callback<Partida>() {
@@ -66,11 +69,13 @@ public class InventarioActivity extends AppCompatActivity {
                         if (resp.isSuccessful() && resp.body() != null) {
                             List<Objeto> inv = resp.body().getInventario();
                             adapter.setData(inv);
+                            tvInventarioCount.setText("Tienes " + inv.size() + " objetos en tu inventario"); // 👈 NUEVO
                         } else {
                             Toast.makeText(InventarioActivity.this,
                                     "Error cargando inventario", Toast.LENGTH_SHORT).show();
                         }
                     }
+
                     @Override
                     public void onFailure(Call<Partida> call, Throwable t) {
                         Toast.makeText(InventarioActivity.this,

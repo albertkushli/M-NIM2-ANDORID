@@ -61,6 +61,10 @@
             android:name=".RandomActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".FaqsActivity"
+            android:exported="true" />
+
 
         <activity
             android:name=".PartidaActivity"

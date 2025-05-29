@@ -24,6 +24,18 @@ app:layout_constraintEnd_toEndOf="parent"
 android:gravity="center"
 android:layout_marginBottom="16dp"/>
 
+    <TextView
+        android:id="@+id/tvSaludoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola, usuario"
+        android:textSize="18sp"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <!-- Botón Crear Partida -->
 <Button
 android:id="@+id/btnCrearPartida"

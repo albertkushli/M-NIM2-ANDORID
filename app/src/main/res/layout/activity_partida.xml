@@ -92,6 +92,19 @@
         android:layout_marginTop="24dp"
         android:contentDescription="Ir a Inventario" />
 
+    <ImageButton
+        android:id="@+id/btnFaqs"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/placeholder"
+        app:layout_constraintTop_toBottomOf="@id/btnInventario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:contentDescription="FAQs" />
+
     <!-- Botón flotante menú -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabOpenMenu"

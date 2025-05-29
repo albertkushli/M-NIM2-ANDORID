@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -40,6 +41,11 @@ public class PartidasMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partidas_menu);
+        String nombreUsuario = getIntent().getStringExtra("nombreUsu");
+        TextView tvSaludo = findViewById(R.id.tvSaludoUsuario);
+        if (nombreUsuario != null && !nombreUsuario.isEmpty()) {
+            tvSaludo.setText("Hola, " + nombreUsuario);
+        }
         FloatingActionButton fabOpenMenu = findViewById(R.id.fabOpenMenu);
         fabOpenMenu.setOnClickListener(v -> {
             NavigationBottomSheet.showNavigationMenu(this, null);

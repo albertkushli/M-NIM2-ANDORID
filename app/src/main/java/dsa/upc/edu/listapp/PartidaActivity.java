@@ -32,6 +32,11 @@ public class PartidaActivity extends AppCompatActivity {
         // Botones tienda e inventario
         ImageButton btnTienda = findViewById(R.id.btnTienda);
         ImageButton btnInventario = findViewById(R.id.btnInventario);
+        ImageButton btnFaqs = findViewById(R.id.btnFaqs);
+        btnFaqs.setOnClickListener(v -> {
+            Intent intent = new Intent(PartidaActivity.this, dsa.upc.edu.listapp.FaqsActivity.class);
+            startActivity(intent);
+        });
 
         // Botón de volver
         Button backButton = findViewById(R.id.btn_back);
@@ -51,7 +56,12 @@ public class PartidaActivity extends AppCompatActivity {
             // Mostramos info en los TextViews
             tvIdPartida.setText("ID: " + partida.getId_partida());
             tvUsuario.setText("Usuario: " + partida.getId_usuario());
-            tvVidas.setText("Vidas: " + partida.getVidas());
+            int vidas = partida.getVidas();
+            StringBuilder corazones = new StringBuilder();
+            for (int i = 0; i < vidas; i++) {
+                corazones.append("❤️");
+            }
+            tvVidas.setText("Vidas: " + corazones.toString());
             tvMonedas.setText("Monedas: " + partida.getMonedas());
             tvPuntuacion.setText("Puntuación: " + partida.getPuntuacion());
 
